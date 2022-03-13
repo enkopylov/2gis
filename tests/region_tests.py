@@ -192,7 +192,6 @@ def test_decimal_page_size(entrypoint: str, page_size: int) -> NoReturn:
 
     param = f'?page_size={page_size}'
     method_with_params = ''.join([METHOD, param])
-
     response = make_get_request(entrypoint, method_with_params)
 
     assert response.json()['error']['message'] == error_msg
